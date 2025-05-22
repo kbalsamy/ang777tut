@@ -1,0 +1,26 @@
+@use "../flow-common";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+::ng-deep f-flow {
+  @include flow-common.connection;
+}
+.f-node {
+  @include flow-common.node;
+}
+
+
+// ::ng-deep svg line {
+//   marker-end: url(#arrow);
+// }
+
+// /* Optional line styling */
+// ::ng-deep svg line {
+//   stroke: #cf1818;
+//   stroke-width: 2px;
+// }

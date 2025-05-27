@@ -1,5 +1,17 @@
+<div>
 
-<div style="display:flex; width:50vw; height:100vh;">
+  <div *ngFor="let item of items; let i = index" 
+     class="item" 
+     [class.selected]="selectedIndex === i"
+     (click)="selectItem(i)">
+
+  <span class="close-btn" 
+        *ngIf="selectedIndex === i"
+        (click)="closeItem(i, $event)">✖</span>
+
+  {{ item }}
+</div>
+<div style="display:flex; width:50vw; height:50vh;">
 
 <f-flow fDraggable>
 
@@ -44,8 +56,16 @@
   <app-side-by-side-table [obj1]="ob1" [obj2]="ob2"></app-side-by-side-table>
  
 </div>
-<div>
+<div style="margin-right: 1rem;">
    <diff-side-by-side-table [obj1]="ob1" [obj2]="ob2"></diff-side-by-side-table>
 </div>
+<div>
+   <merge-app-side-by-side-table [obj1]="ob1" [obj2]="ob2"></merge-app-side-by-side-table>
+</div>
+
+
+
+</div>
+
 
 </div>

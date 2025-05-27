@@ -66,4 +66,17 @@ ob2 = {
         }
     ]
 }
+
+items = ['Item 1', 'Item 2', 'Item 3'];
+  selectedIndex: number | null = null;
+
+  selectItem(index: number) {
+    this.selectedIndex = index;
+  }
+
+  closeItem(index: number, event: MouseEvent) {
+    event.stopPropagation(); // Prevent reselect on close
+    this.items.splice(index, 1);
+    this.selectedIndex = null;
+  }
 }
